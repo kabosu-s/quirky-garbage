@@ -39,8 +39,9 @@ p {
 }
 
 .content {
-  min-height: 85vh;
+  min-height: 50vh;
   padding: 4rem 0;
+  flex-grow: 2;
   .header {
     margin: 4rem auto;
     text-align: center;

@@ -17,17 +17,11 @@
     </text>
     </svg>
 </div>
-<main class="about content">
-<div class="header">
-    <img src="/img/img_misin.svg" alt="" />
-    <h1>ABOUT</h1>
-    <p class="message">
-        Vue-CliとHeadlessCMSの勉強を兼ねてブログを作ったので…<br>
-        がんばって続けてみます。
-    </p>
+<div class="content">
+<h1>ABOUT</h1>
+<p>Vue-CliとHeadlessCMSの勉強を兼ねてのブログ<br>
+目的なく、色々改造しながら気ままに続けてみます。</p>
 </div>
-
-</main>
 </template>
 
 <script>
@@ -77,7 +71,6 @@ export default {
     overflow: hidden;
     flex-grow: 2;
 }
-
 .circles {
     pointer-events: none;
     position: absolute;
@@ -119,4 +112,24 @@ export default {
     0%  {transform: rotate(0);}
     100%  {transform: rotate(360deg);}
 }
+
+.content {
+    border-top: 1px solid $c_base;
+    overflow: hidden;
+    position: relative;
+    background: url(/img/img_baqet.svg) no-repeat bottom 5% right 3%;
+    background-size: 300px auto;
+    padding: 0 3%;
+    width: 100%;
+    h1 {
+        font-size: 22rem;
+        line-height: 1;
+        margin: -25px auto auto -4%;
+        font-family: 'Bellefair', serif;
+        color: #c9d0d4;
+        white-space: nowrap;
+    }
+
+}
+
 </style>

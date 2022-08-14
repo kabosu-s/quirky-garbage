@@ -3,7 +3,7 @@
         <router-link to="/" active-class="link_active" exact>
             <div class="title">
                 <img class="logo" :src="logo" width="50" height="79" />
-                <div class="title_text">Garbage<br>Base.</div>
+                <div class="title_text">QUIRKY<br>GARBAGE</div>
             </div>
         </router-link>
         <div
@@ -59,45 +59,45 @@ header {
   display: flex;
   flex-flow: row nowrap;
   height: 100px;
-  justify-content: space-between;
-  padding: 0;
-  position: relative;
-  width: 100%;
   @include mq767 {
     height: 60px;
     padding: 0 1%;
   }
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  width: 100%;
   &::before {
     background: url(/img/img_scissors.svg) no-repeat center center $c_bacckground;
     background-size: 100% auto;
     bottom: -15px;
-    content: "";
+    content: '';
     display: block;
     height: 30px;
-    position: absolute;
-    right: 3%;
-    width: 60px;
     @include mq767 {
-      width: 30px;
       right: 70px;
+      width: 30px;
     }
+    position: absolute;
+    right: 120px;
+    width: 60px;
   }
 }
 .title {
   align-items: center;
+  border-right: 1px solid #2c3e50;
   display: flex;
   flex-flow: row nowrap;
-  border-right: 1px solid #2c3e50;
-  padding: 10px 20px;
   @include mq767 {
-    padding: 0;
     border-right: none;
+    padding: 0;
   }
+  padding: 10px 20px;
   .logo {
     @include mq767 {
+      height: 60px;
       margin: 0 10px 0 0;
       width: 30px;
-      height: 60px;
     }
     line-height: 1;
     margin: 0 20px 0 0;
@@ -108,95 +108,108 @@ header {
     }
   }
   .title_text {
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 3.8rem;
     font-weight: 700;
-    line-height: 1;
     @include mq767 {
       font-size: 3.2rem;
       br {
         display: none;
       }
     }
+    line-height: 1;
   }
 }
 nav {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  @include mq767 {
-    display: none;
-    &.active {
-      animation: fadePosition 1s ease;
-      display: block;
-      position: absolute;
-      top: 70px;
-      width: 100px;
-      right: 5px;
-      background: $c_bacckground;
-      z-index: 0;
-      padding: 0 5px;
-      border-radius: 5px;
-      box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+  display: none;
+  &.active {
+    align-items: center;
+    animation: fadePosition 1s ease;
+    background: $c_base;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    @include mq767 {
+      width: 100%;
     }
+    justify-content: center;
+    padding: 0 5px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    z-index: 10;
   }
   a {
-    font-family: "Oswald", sans-serif;
-    font-size: 2rem;
-    width: 120px;
+    color: #fff;
     display: flex;
-    @include mq767 {
-      display: block;
-      text-align: right;
-      border-bottom: 1px dotted $c_base;
-      margin: 10px auto;
-      padding: 0 10px;
-    }
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    padding: 16px;
+    width: 100%;
   }
 }
 .openbtn {
-  display: none;
-  position: relative;
-  cursor: pointer;
-  height: 60px;
-  width: 50px;
   border-left: 1px solid $c_base;
+  cursor: pointer;
+  display: block;
+  height: 100px;
   @include mq767 {
-    display: block;
+    height: 60px;
+    width: 50px;
   }
+  position: relative;
+  width: 100px;
+  z-index: 11;
   span {
     background-color: $c_base;
     display: inline-block;
     height: 2px;
-    left: 7px;
     position: absolute;
-    transition: all 0.2s;
+    right: 7px;
+    transition: transform .2s ease;
     &:nth-of-type(1) {
-      top: 25px;
+      @include mq767 {
+        top: 25px;
+        width: 70%;
+      }
+      top: 35px;
       width: 80%;
     }
     &:nth-of-type(2) {
-      top: 35px;
+      @include mq767 {
+        top: 35px;
+        width: 40%;
+      }
+      top: 55px;
       width: 50%;
     }
   }
   &.active span {
+    background-color: #fff;
+    position: fixed;
+    right: 20px;
+    width: 100px;
+    @include mq767 {
+    width: 50px;
+    right: 10px;
+    }
     &:nth-of-type(1) {
-      left: 10px;
-      top: 25px;
+      top: 57px;
       transform: translateY(6px) rotate(-45deg);
-      width: 65%;
+    @include mq767 {
+      top: 37px;
+    }
     }
     &:nth-of-type(2) {
-      left: 10px;
-      top: 37px;
+      top: 70px;
       transform: translateY(-6px) rotate(45deg);
-      width: 65%;
+    @include mq767 {
+      top: 50px;
+    }
     }
   }
 }
-
 @keyframes fadePosition {
   0% {
     opacity: 0;

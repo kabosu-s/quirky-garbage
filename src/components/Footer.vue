@@ -7,7 +7,7 @@
 <router-link to="/contact">CONTACT</router-link>
 </nav>
 <div class="sub">
-<p>Writer：saeki</p>
+<p>Author：Saeki</p>
 </div>
 <small><img src="/img/copyright.svg" alt="© Garbage Base."></small>
 </footer>
