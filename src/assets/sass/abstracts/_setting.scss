@@ -1,0 +1,65 @@
+//※このコメントは出ない
+//ベンダープレフィックスメモ
+// @include inline-block;
+// @include box-sizing(border-box);
+// @include box-shadow(0 0 5px $color);
+// @include text-shadow(0 0 5px $color);
+// @include opacity(0.5);
+// @include background(linear-gradient($white, $black));
+// @include transform(rotate(45deg));
+
+// color
+$c_base: #2c3e50;
+$c_bacckground: #f0f0f0;
+
+// clum width
+$gutter: 0;
+$size_max: 1200px;
+$size_inner_max: 980px;
+$size_inner_min: 810px;
+$size_min: 320px;
+// Width
+$width-pc: 960px;
+$width-tablet: 747px;
+$width-smartphone: 460px;
+$width-scrollbar: 20px;
+
+//@mixin に続いてお好みの名前を定義し、@include で呼び出します。
+//.class{ @include hoge(**); }  ←（）は引数
+//@include で呼び出すときに括弧内（）に値を入れると、その部分に当てはめて出力されます。
+@mixin mq980 {
+	// PC表示: 768+20=788px～
+	@media only screen and (max-width: $width-pc + $width-scrollbar) {
+		@content;
+	}
+}
+
+@mixin mq767 {
+	// タブレット表示: 0 ～ 768+20-1=787px
+	@media only screen and (max-width: $width-tablet + $width-scrollbar) {
+		@content;
+	}
+}
+
+@mixin mq480 {
+	// スマートフォン表示: 480+20-1=499px～
+	@media only screen and (max-width: $width-smartphone + $width-scrollbar) {
+		@content;
+	}
+}
+
+//サイズ直書き @include mq(300) {....}
+@mixin mq($size) {
+	@media only screen and (max-width: $size + px) {
+		@content;
+	}
+}
+
+//親セレクタの置換
+//@include replace(".hoge", ".poge") {}
+//@include replace(".hoge , .poge", ".poge") {} ←hogeだけ外したい
+@mixin replace ($original, $replacement) {
+	@at-root #{selector-replace(&, $original, $replacement)} {
+		@content
+	}
+}

@@ -1,0 +1,225 @@
+/* =======================================
+	 common
+ ======================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Oswald:wght@200;400;500;700&family=Roboto:wght@100;400;500;700&Bellefair&family=Dorsa&family=Fredericka+the+Great&display=swap");
+
+// font-family: 'Noto Sans JP', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Bellefair', serif;
+// font-family: 'Fredericka the Great', cursive;
+// font-family: 'Dorsa', sans-serif;
+
+body {
+  background: $c_bacckground;
+  color: $c_base;
+  font-family: "Noto Sans JP", "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.8;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+a {
+  color: $c_base;
+  text-decoration: none;
+}
+a img {
+  transition: opacity .4s ease;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.content {
+  min-height: 85vh;
+  padding: 4rem 0;
+  .header {
+    margin: 4rem auto;
+    text-align: center;
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: 3.8rem;
+      font-weight: 400;
+      line-height: 1;
+      margin: 2rem auto;
+      padding: 0 10px 5px;
+      text-align: center;
+    }
+  }
+  .message {
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+  .section {
+    margin: 0 auto;
+    max-width: 96%;
+    width: 720px;
+  }
+}
+
+//form
+form {
+  .input-group {
+    font-size: 1.4rem;
+    margin: 0 auto 20px;
+    padding: 20px 0;
+    position: relative;
+    &.name {
+      margin: 0 auto 0 0;
+      width: 60%;
+      input {
+        width: 100%;
+      }
+    }
+    .error {
+      bottom: 0;
+      color: #d85a5a;
+      font-size: 1.2rem;
+      position: absolute;
+      right: 0;
+    }
+    label {
+      color: #aaaaaa;
+      font-size: 1.4rem;
+      left: 0;
+      position: absolute;
+      top: 20px;
+      transition: all .2s;
+    }
+    input:focus + label,
+    textarea:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:not(:placeholder-shown) + label {
+      color: $c_base;
+      font-size: 1.2rem;
+      top: 0;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: transparent;
+    }
+  }
+  button {
+    display: block;
+    margin: auto;
+    outline: 1px dotted rgba($c_base, .5);
+    outline-offset: -1px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    transition: all .6s ease-in-out;
+    width: 200px;
+    font-size: 1.6rem;
+    &::before,
+    &:after {
+      border: solid $c_base;
+      content: "";
+      height: 10px;
+      position: absolute;
+      transition: all .3s ease-in-out;
+      width: 10px;
+    }
+    &::before {
+      border-width: 1px 0 0 1px;
+      left: 0;
+      top: 0;
+    }
+    &::after {
+      border-width: 0 1px 1px 0;
+      bottom: 0;
+      right: 0;
+    }
+    &:hover {
+      background: $c_base;
+      color: #ffffff;
+      outline: 1px dotted #ffffff;
+      &::before,
+      &:after {
+        border-color: $c_base;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  input {
+    &[type="text"],
+    &[type="email"],
+    &[type="Password"],
+    &[type="number"],
+    &[type="tel"] {
+      -webkit-appearance: none;
+      background: transparent;
+      border-bottom: 1px solid $c_base;
+      font-size: 1.6rem;
+      margin-right: 5px;
+      min-width: 200px;
+      padding: 5px;
+      -webkit-tap-highlight-color: rgba(#000000, 0);
+      width: auto;
+    }
+    &[type="number"]::-webkit-inner-spin-button,
+    [type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type="tel"]::-webkit-inner-spin-button,
+    [type="tel"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $c_bacckground inset;
+  }
+  textarea {
+    -webkit-appearance: none;
+    background: transparent;
+    border-bottom: 1px solid $c_base;
+    font-size: 1.4rem;
+    min-height: 200px;
+    padding: 10px 5px;
+    -webkit-tap-highlight-color: rgba(#000000, 0);
+    width: 100%;
+  }
+  input[type="submit"],
+  input[type="button"] {
+    -webkit-appearance: none;
+            appearance: none;
+    border: none;
+    border-radius: 0;
+    -webkit-box-sizing: content-box;
+            box-sizing: border-box;
+
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &:focus {
+      outline-offset: -2px;
+    }
+  }
+  //confilm
+  dl {
+    position: relative;
+    dt {
+      color: $c_base;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 0;
+    }
+    dd {
+      border-bottom: 1px dotted $c_base;
+      padding: 5px;
+    }
+    dd.messagearea {
+      min-height: 200px;
+    }
+  }
+}
