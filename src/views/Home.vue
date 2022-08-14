@@ -66,7 +66,7 @@ export default {
     margin: auto;
     padding: 5%;
     width: 100%;
-    height: 600px;
+    height: 650px;
     position: relative;
     overflow: hidden;
     flex-grow: 2;

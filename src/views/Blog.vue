@@ -20,32 +20,25 @@ export default {
 
 <style lang="scss" scoped>
 .main_visual {
-    align-items: flex-start;
-    background: url(/img/img_gramophone.svg) no-repeat bottom 25% right 10%;
+    background: url(/img/img_gramophone.svg) no-repeat bottom 10% right 5%;
     background-size: 180px auto;
     border-bottom: 1px solid #444;
     color: #666;
-    display: flex;
-    font-size: 1.4rem;
-    font-weight: 400;
     height: 300px;
-    justify-content: space-evenly;
-    align-content: flex-start;
     margin: auto;
-    padding: 5%;
+    overflow: hidden;
+    padding: 0 3%;
     width: 100%;
-    flex-direction: column;
-    flex-wrap: nowrap;
     .title {
-    display: block;
-    width: 100%;
-    font-family: "Oswald", sans-serif;
-    font-size: 9rem;
-    font-weight: 700;
-    color: #2c3e50;
+        font-family: 'Bellefair', serif;
+        font-size: 22rem;
+        color: #c9d0d4;
+        margin: -25px auto auto -4%;
+        white-space: nowrap;
+        line-height: 1;
     }
     p {
-      width: 100%;
+        width: 100%;
     }
 }
 

@@ -122,6 +122,15 @@ header {
 }
 nav {
   display: none;
+  a {
+    opacity: .1;
+    color: #fff;
+    display: flex;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    transition: all .3s ease-in;
+    width: 100%;
+  }
   &.active {
     align-items: center;
     animation: fadePosition 1s ease;
@@ -129,6 +138,7 @@ nav {
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
+    box-shadow: -5px 0 5px 0 rgba(0,0,0,.2);
     @include mq767 {
       width: 100%;
     }
@@ -139,14 +149,14 @@ nav {
     top: 0;
     width: 50%;
     z-index: 10;
-  }
-  a {
-    color: #fff;
-    display: flex;
-    font-family: 'Oswald', sans-serif;
-    font-size: 4rem;
-    padding: 16px;
-    width: 100%;
+    a {
+      opacity: 1;
+      padding: 16px 5%;
+      &:hover {
+        color: #91979a;
+        padding-left: 4%;
+      }
+    }
   }
 }
 .openbtn {
@@ -187,26 +197,26 @@ nav {
   }
   &.active span {
     background-color: #fff;
+    @include mq767 {
+      right: 10px;
+      width: 50px;
+    }
     position: fixed;
     right: 20px;
     width: 100px;
-    @include mq767 {
-    width: 50px;
-    right: 10px;
-    }
     &:nth-of-type(1) {
+      @include mq767 {
+        top: 37px;
+      }
       top: 57px;
       transform: translateY(6px) rotate(-45deg);
-    @include mq767 {
-      top: 37px;
-    }
     }
     &:nth-of-type(2) {
+      @include mq767 {
+        top: 50px;
+      }
       top: 70px;
       transform: translateY(-6px) rotate(45deg);
-    @include mq767 {
-      top: 50px;
-    }
     }
   }
 }
@@ -220,4 +230,5 @@ nav {
     transform: translateY(0);
   }
 }
+
 </style>
